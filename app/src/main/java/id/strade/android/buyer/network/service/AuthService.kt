@@ -1,6 +1,6 @@
 package id.strade.android.buyer.network.service
 
-import id.strade.android.buyer.response.UserResponse
+import id.strade.android.buyer.network.response.UserResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

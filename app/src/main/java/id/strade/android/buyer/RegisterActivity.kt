@@ -1,20 +1,14 @@
 package id.strade.android.buyer
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import org.androidannotations.annotations.AfterViews
-import org.androidannotations.annotations.EActivity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
-import com.google.gson.Gson
-import id.strade.android.seller.network.ApiClient
-import id.strade.android.seller.network.response.UserResponse
-import id.strade.android.seller.network.service.AuthService
-import id.strade.android.seller.storage.Prefs
+import id.strade.android.buyer.network.ApiClient
+import id.strade.android.buyer.network.response.UserResponse
+import id.strade.android.buyer.network.service.AuthService
+import id.strade.android.buyer.storage.Prefs
 import org.androidannotations.annotations.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,6 +29,8 @@ open class RegisterActivity : AppCompatActivity() {
     lateinit var phoneNumberEditText: EditText
     @ViewById(R.id.password_edit_text)
     lateinit var passwordEditText: EditText
+
+    lateinit var dialog: ProgressDialog
 
 
     @AfterViews
@@ -67,11 +63,11 @@ open class RegisterActivity : AppCompatActivity() {
                             if (resp != null && resp.status!!) {
                                 prefs.token     = resp.token
                                 prefs.user      = resp.user
-                                Toast.makeText(applicationContext, "Welcome, ${resp.user?.fullName} :)", Toast.LENGHT_SHORT).show()
-                                HomeActivity_.intent(applicationContext).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start()
+                                Toast.makeText(applicationContext, "Welcome, ${resp.user?.fullName} :)", Toast.LENGTH_SHORT ).show()
+                                //HomeActivity_.intent(applicationContext).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start()
                                 finish()
                             } else {
-                                Toast.makeText(ApplicationContext, resp?.message, Toast.LENGTH_SHORT).show()
+                                Toast.makeText(applicationContext, resp?.message, Toast.LENGTH_SHORT).show()
                             }
                         } else {
                             Toast.makeText(applicationContext, "gagal register, ada kesalahan pada server", Toast.LENGTH_SHORT).show()

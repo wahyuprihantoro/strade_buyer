@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.gson.Gson
 import id.strade.android.buyer.network.ApiClient
 import id.strade.android.buyer.storage.Prefs
-import id.strade.android.buyer.response.UserResponse
+import id.strade.android.buyer.network.response.UserResponse
 import id.strade.android.buyer.network.service.AuthService
 import org.androidannotations.annotations.*
 import retrofit2.Call
