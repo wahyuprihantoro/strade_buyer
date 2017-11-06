@@ -46,7 +46,6 @@ open class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    @Click(R.id.register_buyer)
     fun register() {
         showDialog()
         var name        = nameEditText.text.toString()
