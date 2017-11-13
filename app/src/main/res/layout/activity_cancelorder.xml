@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/question_cancel_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Are you serious to cancel your order ? Please choose your reason :"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="29dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox_pilihan_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saya sudah mendapatkan pedagang lain"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="80dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox_pilihan_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saya ingin mencari barang lain"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="112dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox_pilihan_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedagang meminta cancel"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="144dp" />
+
+            <Button
+                android:id="@+id/submit_cancel_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="submit"
+                tools:layout_editor_absoluteX="123dp"
+                tools:layout_editor_absoluteY="210dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
