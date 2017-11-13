@@ -1,4 +1,4 @@
-package id.strade.android.seller.homefragment
+package id.strade.android.buyer.homefragment
 
 import android.support.v4.app.Fragment
 import id.strade.android.buyer.R

@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import com.roughike.bottombar.BottomBar
-import id.strade.android.seller.homefragment.AccountFragment_
-import id.strade.android.seller.homefragment.HomeFragment_
-import id.strade.android.seller.homefragment.MapFragment_
-import id.strade.android.seller.homefragment.RequestFragment_
+import id.strade.android.buyer.homefragment.AccountFragment_
+import id.strade.android.buyer.homefragment.HomeFragment_
+import id.strade.android.buyer.homefragment.MapFragment_
+import id.strade.android.buyer.homefragment.RequestFragment_
 import org.androidannotations.annotations.AfterViews
 import org.androidannotations.annotations.EActivity
 import org.androidannotations.annotations.ViewById

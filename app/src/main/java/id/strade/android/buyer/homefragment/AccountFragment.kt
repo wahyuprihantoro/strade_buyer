@@ -1,11 +1,11 @@
-package id.strade.android.seller.homefragment
+package id.strade.android.buyer.homefragment
 
 import android.support.v4.app.Fragment
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import id.strade.android.buyer.R
 import id.strade.android.buyer.IntroActivity_
+import id.strade.android.buyer.R
 import id.strade.android.buyer.storage.Prefs
 import org.androidannotations.annotations.*
 
@@ -24,14 +24,14 @@ open class AccountFragment : Fragment() {
 
     @AfterViews
     fun init() {
-//        val user = prefs.user
-//        Glide.with(this)
-//                .load(user.imageUrl)
-//                .into(profilePictureImageView)
-//        Glide.with(this)
-//                .load(user.store?.imageUrl)
-//                .into(coverImageView)
-//        nameView.text = user.fullName
+        val user = prefs.user
+        Glide.with(this)
+                .load(user.imageUrl)
+                .into(profilePictureImageView)
+        Glide.with(this)
+                .load(user.store?.imageUrl)
+                .into(coverImageView)
+        nameView.text = user.fullName
     }
 
 

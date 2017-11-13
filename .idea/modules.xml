@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StradeBuyer.iml" filepath="$PROJECT_DIR$/StradeBuyer.iml" />
       <module fileurl="file://D:\education\teknologi mobile\new_buyer\strade_buyer\StradeBuyer.iml" filepath="D:\education\teknologi mobile\new_buyer\strade_buyer\StradeBuyer.iml" />
+      <module fileurl="file://D:\education\teknologi mobile\strade_buyer\StradeBuyer.iml" filepath="D:\education\teknologi mobile\strade_buyer\StradeBuyer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://D:\education\teknologi mobile\new_buyer\strade_buyer\app\app.iml" filepath="D:\education\teknologi mobile\new_buyer\strade_buyer\app\app.iml" />
-      <module fileurl="file://D:\education\teknologi mobile\strade_buyer\strade_buyer.iml" filepath="D:\education\teknologi mobile\strade_buyer\strade_buyer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strade_buyer.iml" filepath="$PROJECT_DIR$/strade_buyer.iml" />
       <module fileurl="file://D:\proyekan\StradeBuyer\strade_buyer.iml" filepath="D:\proyekan\StradeBuyer\strade_buyer.iml" />
     </modules>
   </component>
