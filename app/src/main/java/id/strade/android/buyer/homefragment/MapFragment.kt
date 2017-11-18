@@ -26,7 +26,7 @@ open class MapFragment : Fragment(), OnMapReadyCallback {
 
         // Add a marker in Sydney and move the camera
         val location = LatLng(-6.364600, 106.828673)
-        mMap.addMarker(MarkerOptions().position(location).title("Marker in Sydney"))
+        mMap.addMarker(MarkerOptions().position(location).title("Marker in Fasilkom"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,18.0f))
     }
 
