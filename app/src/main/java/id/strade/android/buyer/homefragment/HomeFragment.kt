@@ -20,7 +20,7 @@ open class HomeFragment : Fragment() {
 
     @AfterViews
     fun init() {
-        val obj_adapter = CustomAdapter(getLists())
+        val obj_adapter = CustomAdapter(getLists(),rv,context)
         Toast.makeText(context, "${getLists().size}", Toast.LENGTH_SHORT).show()
         rv.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv.adapter = obj_adapter
