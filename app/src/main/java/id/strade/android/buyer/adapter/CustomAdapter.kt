@@ -1,4 +1,4 @@
-package id.strade.android.buyer
+package id.strade.android.buyer.adapter
 
 /**
  * Created by ARSnova on 18/11/2017.
@@ -11,23 +11,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
+import id.strade.android.buyer.R
 import id.strade.android.buyer.model.Item
 import id.strade.android.buyer.model.Store
-import kotlinx.android.synthetic.main.list_layout.view.*
-import org.w3c.dom.Text
 
 
 class CustomAdapter(val userList: ArrayList<Store>, val rv: RecyclerView,val ctx:Context) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_layout, parent, false)
         return ViewHolder(v)
     }
 
     //this method is binding the data on the list
-    override fun onBindViewHolder(holder: CustomAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(userList[position])
     }
 

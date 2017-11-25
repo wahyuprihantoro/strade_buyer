@@ -1,10 +1,11 @@
-package id.strade.android.buyer
+package id.strade.android.buyer.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import id.strade.android.buyer.R
 import id.strade.android.buyer.model.Item
 
 /**
@@ -13,13 +14,13 @@ import id.strade.android.buyer.model.Item
 class SellerAdapter(val itemList: ArrayList<Item>) : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SellerAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_list_layout, parent, false)
         return ViewHolder(v)
     }
 
     //this method is binding the data on the list
-    override fun onBindViewHolder(holder: SellerAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(itemList[position])
     }
 
