@@ -37,17 +37,6 @@
                 android:textColor="@color/category_title"
                 android:textSize="@dimen/category_title" />
 
-            <TextView
-                android:id="@+id/tv_category_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_category_title"
-                android:paddingBottom="@dimen/detail_padding_bottom"
-                android:paddingLeft="@dimen/category_title_padding"
-                android:paddingRight="@dimen/category_title_padding"
-                android:textSize="@dimen/detail" />
-
-
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
