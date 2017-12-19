@@ -1,41 +1,50 @@
 package id.strade.android.buyer.adapter
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
+import id.strade.android.buyer.ProductListActivity_
 import id.strade.android.buyer.R
-import id.strade.android.buyer.model.Item
+import id.strade.android.buyer.model.Store
 
 /**
  * Created by ARSnova on 20/11/2017.
  */
-class SellerAdapter(val itemList: ArrayList<Item>) : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
+class SellerAdapter(val context: Context, val itemList: ArrayList<Store>) : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
 
-    //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_list_layout, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_seller, parent, false)
         return ViewHolder(v)
     }
 
-    //this method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(itemList[position])
     }
 
-    //this method is giving the size of the list
     override fun getItemCount(): Int {
         return itemList.size
     }
 
-    //the class is hodling the list view
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var name: TextView = itemView.findViewById(R.id.tv_item_name)
-        var price: TextView = itemView.findViewById(R.id.tv_price)
-        fun bindItems(user: Item) {
-            name.text = user.name
-            price.text = user.price.toString()
+        var name: TextView = itemView.findViewById(R.id.name_view)
+        var image: ImageView = itemView.findViewById(R.id.image_view)
+        var address: TextView = itemView.findViewById(R.id.address_view)
+        var status: TextView = itemView.findViewById(R.id.status_view)
+        var distance: TextView = itemView.findViewById(R.id.distance_view)
+        fun bindItems(store: Store) {
+            name.text = store.name
+            address.text = store.address
+            distance.text = "${store.distance} KM"
+            status.text = "${store.statusStr}"
+            Glide.with(image).load(store.imageUrl).into(image)
+            image.setOnClickListener {
+                ProductListActivity_.intent(context).start()
+            }
         }
 
     }

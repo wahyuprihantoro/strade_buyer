@@ -56,7 +56,7 @@
     <dimen name="backdrop_subtitle">18dp</dimen>
     <dimen name="card_margin">5dp</dimen>
     <dimen name="card_category_radius">0dp</dimen>
-    <dimen name="category_cover_height">160dp</dimen>
+    <dimen name="category_cover_height">128dp</dimen>
     <dimen name="category_title_padding">10dp</dimen>
     <dimen name="category_title">15dp</dimen>
     <dimen name="detail_padding_bottom">5dp</dimen>

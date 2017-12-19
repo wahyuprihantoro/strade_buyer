@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
  * Created by wahyu on 22 October 2017.
  * modified by ghozi on 22 October 2017
  */
-class Store(i: Int, i1: Int, s: String, i2: Int, s1: String, s2: String) {
+class Store(imageUrl: String, status: String, name: String, address: String, distance: Double) {
     @SerializedName("id")
     @Expose
     var id: Long? = null
@@ -30,10 +30,21 @@ class Store(i: Int, i1: Int, s: String, i2: Int, s1: String, s2: String) {
     @SerializedName("image_url")
     @Expose
     var imageUrl: String? = null
+    @SerializedName("current_address")
+    @Expose
+    var address: String = ""
+    @SerializedName("current_distance")
+    @Expose
+    var distance: Double = 0.0
+    @SerializedName("status_full")
+    @Expose
+    var statusStr: String
 
     init {
-        name=s
-        openTime=s1
-        closeTime=s2
+        this.imageUrl = imageUrl
+        this.statusStr = status
+        this.name = name
+        this.address = address
+        this.distance = distance
     }
 }

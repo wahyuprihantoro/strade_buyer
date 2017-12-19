@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @EBean
 open class ApiClient {
 
-    val BASE_URL: String = "http://159.89.200.247/api/"
+    val BASE_URL: String = "http://10.0.3.2:8000/api/"
 
     fun <T> getService(service: Class<T>): T {
         return getRetrofit().create(service)
