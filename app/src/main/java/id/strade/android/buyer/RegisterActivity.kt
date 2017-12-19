@@ -46,6 +46,7 @@ open class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    @Click
     fun register() {
         showDialog()
         var name        = nameEditText.text.toString()
@@ -63,7 +64,7 @@ open class RegisterActivity : AppCompatActivity() {
                                 prefs.token     = resp.token
                                 prefs.user      = resp.user
                                 Toast.makeText(applicationContext, "Welcome, ${resp.user?.fullName} :)", Toast.LENGTH_SHORT ).show()
-                                //HomeActivity_.intent(applicationContext).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start()
+                                HomeActivity_.intent(applicationContext).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start()
                                 finish()
                             } else {
                                 Toast.makeText(applicationContext, resp?.message, Toast.LENGTH_SHORT).show()

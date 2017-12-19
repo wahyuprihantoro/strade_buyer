@@ -38,7 +38,7 @@ class Store(imageUrl: String, status: String, name: String, address: String, dis
     var distance: Double = 0.0
     @SerializedName("status_full")
     @Expose
-    var statusStr: String
+    var statusStr: String = "BUKA"
 
     init {
         this.imageUrl = imageUrl

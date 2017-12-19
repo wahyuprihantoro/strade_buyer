@@ -30,4 +30,7 @@ class User {
     @SerializedName("store")
     @Expose
     var store: Store? = null
+    @SerializedName("location")
+    @Expose
+    var location: UserLocation = UserLocation()
 }

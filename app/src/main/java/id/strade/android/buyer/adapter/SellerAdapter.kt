@@ -1,6 +1,7 @@
 package id.strade.android.buyer.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -40,10 +41,11 @@ class SellerAdapter(val context: Context, val itemList: ArrayList<Store>) : Recy
             name.text = store.name
             address.text = store.address
             distance.text = "${store.distance} KM"
-            status.text = "${store.statusStr}"
+            status.text = "BUKA"
+//            status.text = "${store.statusStr}"
             Glide.with(image).load(store.imageUrl).into(image)
             image.setOnClickListener {
-                ProductListActivity_.intent(context).start()
+                ProductListActivity_.intent(context).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start()
             }
         }
 
