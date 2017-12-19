@@ -33,15 +33,13 @@ class CategoryAdapter(private val categories: ArrayList<Category>, val context: 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: TextView = itemView.findViewById(R.id.tv_category_title)
-        var detail: TextView = itemView.findViewById(R.id.tv_category_detail)
         var img: ImageView = itemView.findViewById(R.id.thumbnail)
         var layout: LinearLayout = itemView.findViewById(R.id.clickable_layout)
         fun bindItems(ctg: Category) {
             title.text = ctg.title
-            detail.text = ctg.detail
             Glide.with(context).load(ctg.url_image).into(img)
             layout.setOnClickListener {
-                SellerListActivity_.intent(context).start()
+                SellerListActivity_.intent(context).extra("id",ctg.id).start()
             }
         }
     }
