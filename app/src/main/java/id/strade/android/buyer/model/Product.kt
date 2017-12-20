@@ -8,10 +8,10 @@ import java.io.Serializable
 /**
  * Created by wahyu on 18 November 2017.
  */
-class Product(name: String, imageUrl: String, price: Double) : Serializable {
+class Product(name: String, imageUrl: String, price: Double, id: Int) : Serializable {
     @SerializedName("id")
     @Expose
-    var id: Int = 0
+    var id: Int = id
     @SerializedName("name")
     @Expose
     var name: String = name

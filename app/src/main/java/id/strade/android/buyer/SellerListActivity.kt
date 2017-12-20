@@ -33,9 +33,9 @@ open class SellerListActivity : AppCompatActivity() {
     @AfterViews
     fun init() {
         var id = intent.getIntExtra("id", 0)
-        var stores: ArrayList<Store> = ArrayList()
+        var users: ArrayList<User> = ArrayList()
         rv.layoutManager = LinearLayoutManager(this)
-        rv.adapter = SellerAdapter(this, stores)
+        rv.adapter = SellerAdapter(this, users)
 
         apiClient.getService(StoreByCategoryService::class.java).store_by_category(id).enqueue(object : Callback<StoreByCategoryResponse> {
             override fun onResponse(call: Call<StoreByCategoryResponse>, response: Response<StoreByCategoryResponse>) {
@@ -47,9 +47,8 @@ open class SellerListActivity : AppCompatActivity() {
                         users.forEach {
                             it.store?.address = it.location.currentAddress
                             it.store?.distance = it.id?.minus(Random().nextDouble())!!
-                            stores.add(it.store!!)
                         }
-                        rv.adapter = SellerAdapter(applicationContext, stores)
+                        rv.adapter = SellerAdapter(applicationContext, users)
                         Toast.makeText(applicationContext, "Berhasil", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(applicationContext, resp?.message, Toast.LENGTH_SHORT).show()
