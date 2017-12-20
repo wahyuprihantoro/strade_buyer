@@ -4,6 +4,7 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,7 @@ class ProductAdapter(var context: Context, var products: List<Product>) : Recycl
 
 
     companion object {
-        var productIds: List<Int> = ArrayList()
+        var productIds: MutableMap<Int, Int> = HashMap()
     }
 
     override fun getItemCount() = products.size
@@ -47,23 +48,37 @@ class ProductAdapter(var context: Context, var products: List<Product>) : Recycl
             Glide.with(context).load(product.imageUrl).into(image)
             name.text = product.name
             price.text = product.price.toString()
-//            editText.addTextChangedListener(object : TextWatcher {
-//                override fun afterTextChanged(s: Editable) {
-//                    try {
-//                        if (s.toString().toInt() > 0) {
-//                            for ()
-//                        }
-//                    } catch (ignored: Exception) {
-//
-//                    }
-//                }
-//
-//                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-//                }
-//
-//                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-//                }
-//            })
+            editText.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable) {
+                    try {
+                        if (s.toString().toInt() > 0) {
+                            productIds[product.id] = s.toString().toInt()
+                            Log.d("wahyu et", s.toString())
+                            Log.d("wahyu et1", product.id.toString())
+                            Log.d("wahyu et2", productIds[product.id].toString())
+                        }
+                    } catch (ignored: Exception) {
+
+                    }
+                }
+
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                }
+            })
         }
+    }
+
+    fun getProductIds(): List<Int>? {
+        val ids = ArrayList<Int>()
+        Log.d("wahyu key", productIds.keys.toString())
+        productIds.keys.forEach {
+            for (i in 1..productIds[it]!!)
+                ids.add(it)
+        }
+        Log.d("wahyu ids", ids.toString())
+        return ids
     }
 }

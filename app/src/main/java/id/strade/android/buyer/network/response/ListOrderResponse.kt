@@ -4,9 +4,11 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import id.strade.android.buyer.model.Order
 
-
-class OrderResponse : BaseResponse() {
-    @SerializedName("order")
+/**
+ * Created by ARSnova on 20/12/2017.
+ */
+class ListOrderResponse{
+    @SerializedName("orders")
     @Expose
-    var user: Order? = null
+    lateinit var orders: List<Order>
 }

@@ -4,9 +4,6 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-/**
- * Created by ARSnova on 20/12/2017.
- */
 class OrderItem : Serializable {
     @SerializedName("id")
     @Expose

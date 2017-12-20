@@ -20,6 +20,7 @@ import retrofit2.HttpException
 import retrofit2.Response
 import id.strade.android.buyer.network.response.BaseResponse
 import id.strade.android.buyer.adapter.OrderAdapter
+import id.strade.android.buyer.network.response.ListOrderResponse
 
 @EFragment(R.layout.fragment_request)
 open class RequestFragment : Fragment() {
@@ -31,8 +32,8 @@ open class RequestFragment : Fragment() {
     @AfterViews
     fun init() {
         rv.layoutManager = LinearLayoutManager(context)
-        apiClient.getService(OrderService::class.java).get_order().enqueue(object: Callback<OrderResponse>{
-            override fun onResponse(call: Call<OrderResponse>, response: Response<OrderResponse>) {
+        apiClient.getService(OrderService::class.java).get_order().enqueue(object: Callback<ListOrderResponse>{
+            override fun onResponse(call: Call<ListOrderResponse>, response: Response<ListOrderResponse>) {
                 if (response.isSuccessful) {
                     val resp = response.body()
                     val adapter = OrderAdapter(context, resp!!.orders)
@@ -51,7 +52,7 @@ open class RequestFragment : Fragment() {
                     Toast.makeText(context, "Terjadi kesalahan pada koneksi.", Toast.LENGTH_SHORT).show()
                 }
             }
-            override fun onFailure(call: Call<OrderResponse>, t: Throwable) {
+            override fun onFailure(call: Call<ListOrderResponse>, t: Throwable) {
                 Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
             }
         })

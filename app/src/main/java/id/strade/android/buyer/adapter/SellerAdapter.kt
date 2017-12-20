@@ -11,12 +11,12 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import id.strade.android.buyer.ProductListActivity_
 import id.strade.android.buyer.R
-import id.strade.android.buyer.model.Store
+import id.strade.android.buyer.model.User
 
 /**
  * Created by ARSnova on 20/11/2017.
  */
-class SellerAdapter(val context: Context, val itemList: ArrayList<Store>) : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
+class SellerAdapter(val context: Context, val itemList: ArrayList<User>) : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_seller, parent, false)
@@ -37,15 +37,15 @@ class SellerAdapter(val context: Context, val itemList: ArrayList<Store>) : Recy
         var address: TextView = itemView.findViewById(R.id.address_view)
         var status: TextView = itemView.findViewById(R.id.status_view)
         var distance: TextView = itemView.findViewById(R.id.distance_view)
-        fun bindItems(store: Store) {
-            name.text = store.name
-            address.text = store.address
-            distance.text = "${store.distance} KM"
+        fun bindItems(user: User) {
+            name.text = user.store?.name
+            address.text = user.store?.address
+            distance.text = "${user.store?.distance} KM"
             status.text = "BUKA"
 //            status.text = "${store.statusStr}"
-            Glide.with(image).load(store.imageUrl).into(image)
+            Glide.with(image).load(user.store?.imageUrl).into(image)
             image.setOnClickListener {
-                ProductListActivity_.intent(context).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start()
+                ProductListActivity_.intent(context).seller(user).flags(Intent.FLAG_ACTIVITY_NEW_TASK).start()
             }
         }
 
