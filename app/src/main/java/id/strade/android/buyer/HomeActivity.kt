@@ -28,14 +28,17 @@ open class HomeActivity : AppCompatActivity() {
         setUpBottomBar()
     }
 
-
+    fun changeTitle(item: Int, title: String) {
+        supportActionBar?.title = title
+        viewPager.currentItem = item
+    }
     private fun setUpBottomBar() {
         bottomBar.setOnTabSelectListener { tabId ->
             when (tabId) {
-                R.id.tab_home -> viewPager.currentItem = 0
-                R.id.tab_map -> viewPager.currentItem = 1
-                R.id.tab_request -> viewPager.currentItem = 2
-                R.id.tab_account -> viewPager.currentItem = 3
+                R.id.tab_home -> changeTitle(0, "Beranda")
+                R.id.tab_map -> changeTitle(1, "Maps Penjual")
+                R.id.tab_request -> changeTitle(2, "Pesanan")
+                R.id.tab_account -> changeTitle(3, "Setting")
             }
         }
     }

@@ -49,7 +49,7 @@ open class MapFragment : Fragment(), OnMapReadyCallback {
 
         apiClient.getService(UserService::class.java).getUsers().enqueue(object : Callback<ListUserResponse> {
             override fun onFailure(call: Call<ListUserResponse>?, t: Throwable?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//                Log.d("wahyu err", t?.message)
             }
 
             override fun onResponse(call: Call<ListUserResponse>?, response: Response<ListUserResponse>) {
